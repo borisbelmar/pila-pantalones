@@ -49,9 +49,11 @@ public class Pila {
             System.out.println("No hay pantalones que mostrar en la pila");
         } else {
             Nodo puntero = tos;
-            while (puntero.siguiente != null) {
-                System.out.println("| " + this.get().getId() + " | " + this.get().getMarca() + " | " + this.get().getTalla() + " | " + this.get().getColor() + " |");
+            System.out.println("| ID | Marca | Talla | Color |");
+            System.out.println("| " + puntero.pantalon.getId() + " | " + puntero.pantalon.getMarca() + " | " + puntero.pantalon.getTalla() + " | " + puntero.pantalon.getColor() + " |");
+            while(puntero.siguiente != null) {
                 puntero = puntero.siguiente;
+                System.out.println("| " + puntero.pantalon.getId() + " | " + puntero.pantalon.getMarca() + " | " + puntero.pantalon.getTalla() + " | " + puntero.pantalon.getColor() + " |");
             }
         }
     }
