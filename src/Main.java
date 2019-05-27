@@ -25,6 +25,10 @@ public class Main {
         System.out.println("======================");
     }
 
+    private static void printItem(Pantalon pantalon){
+        System.out.println("| " + pantalon.getId() + " | " + pantalon.getMarca() + " | " + pantalon.getTalla() + " | " + pantalon.getColor() + " | " + pantalon.getCantidad() + " |");
+    }
+
     public static void main(String[] args) {
 
         Scanner read = new Scanner(System.in);
@@ -46,9 +50,12 @@ public class Main {
                     int talla = read.nextInt();
                     System.out.print("Ingrese el color del pantalón (Texto): ");
                     String color = read.next();
-                    pantalones.push(new Pantalon(id=(id+10), marca, talla, color));
+                    System.out.print("Ingrese la cantidad de pantalones (Entero): ");
+                    int cantidad = read.nextInt();
+                    pantalones.push(new Pantalon(id=(id+10), marca, talla, color, cantidad));
                     decor();
-                    System.out.println("| " + pantalones.get().getId() + " | " + pantalones.get().getMarca() + " | " + pantalones.get().getTalla() + " | " + pantalones.get().getColor() + " |");
+                    System.out.println("| ID | Marca | Talla | Color | Cantidad |");
+                    printItem(pantalones.get());
                     System.out.println("Pantalón añadido con éxito!");
                     decor();
                     break;
@@ -59,7 +66,8 @@ public class Main {
                     } else {
                         System.out.println("Has retirado el siguiente pantalón:");
                         decor();
-                        System.out.println("| " + pantalones.get().getId() + " | " + pantalones.get().getMarca() + " | " + pantalones.get().getTalla() + " | " + pantalones.get().getColor() + " |");
+                        System.out.println("| ID | Marca | Talla | Color | Cantidad |");
+                        printItem(pantalones.get());
                         decor();
                         pantalones.pop();
                         id = id-10;
@@ -70,7 +78,8 @@ public class Main {
                         title("La pila de pantalones está vacía");
                     } else {
                         title("3. Mostrar el primer pantalón en la pila");
-                        System.out.println("| " + pantalones.get().getId() + " | " + pantalones.get().getMarca() + " | " + pantalones.get().getTalla() + " | " + pantalones.get().getColor() + " |");
+                        System.out.println("| ID | Marca | Talla | Color | Cantidad |");
+                        printItem(pantalones.get());
                         decor();
                     }
                     break;

@@ -4,12 +4,14 @@ public class Pantalon {
     private String marca;
     private int talla;
     private String color;
+    private int cantidad;
 
-    public Pantalon(int id, String marca, int talla, String color) {
+    public Pantalon(int id, String marca, int talla, String color, int cantidad) {
         this.id = id;
         this.marca = marca;
         this.talla = talla;
         this.color = color;
+        this.cantidad = cantidad;
     }
 
     public int getId() {
@@ -44,4 +46,11 @@ public class Pantalon {
         this.color = color;
     }
 
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
 }
